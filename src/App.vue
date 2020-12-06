@@ -1,7 +1,7 @@
 <template>
   <div class="QQMusic">
     <router-view name="xm-header"></router-view>
-    <router-view to="/home" class="discovery"></router-view>
+    <router-view to="/home" class="main"></router-view>
     <router-view name="xm-footer"></router-view>
   </div>
 </template>
@@ -35,16 +35,6 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
 }
 
 ul,
@@ -89,16 +79,18 @@ a {
   outline: none;
   color: #000;
 }
+
 html,
 body,
 .QQMusic {
   height: 100%;
+  overflow-x: hidden;
 }
 .QQMusic {
   display: flex;
   flex-direction: column;
 }
-.discovery {
+.main {
   flex: 1;
 }
 </style>

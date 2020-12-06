@@ -76,14 +76,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Footer'
+}
 </script>
 
 <style lang="scss">
 .footer {
   width: 100%;
   height: 400px;
-  background-color: rgb(51, 51, 51s);
+  background-color: rgb(51, 51, 51);
   &-top {
     color: rgb(127, 127, 127);
     margin: 0 auto;

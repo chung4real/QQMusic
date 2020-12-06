@@ -2,8 +2,8 @@ module.exports = {
   devServer: {
     open: true,
     proxy: {
-      '/v1': {
-        target: 'https://music.taihe.com/',
+      '': {
+        target: 'http://localhost:3300',
         ws: true,
         changeOrigin: true
       }

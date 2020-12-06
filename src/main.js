@@ -6,9 +6,9 @@ import * as ajax from '@/request'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 
+Vue.use(Antd)
 Vue.config.productionTip = false
 Vue.prototype.$http = ajax
-Vue.use(Antd)
 
 new Vue({
   router,

@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Home from '@/views/Home'
+import Home from '@/views/Home/Home'
 
 // 分包
 const SongList = () => import('@/views/SongList')
@@ -12,6 +12,7 @@ const Album = () => import('@/views/Album')
 const MV = () => import('@/views/MV')
 const Tickets = () => import('@/views/Tickets')
 const routes = [
+  // 重定向
   {
     path: '/',
     redirect: '/home'

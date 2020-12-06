@@ -3,7 +3,7 @@ import axios from 'axios'
 // const isDev = process.env.NODE_ENV === 'development'
 
 const ajax = axios.create({
-  baseURL: 'http://localhost:3300/'
+  baseURL: 'http://localhost:3300'
 })
 
 ajax.interceptors.request.use(config => {
@@ -11,9 +11,11 @@ ajax.interceptors.request.use(config => {
 })
 
 ajax.interceptors.response.use(resp => {
-  // console.log(resp)
+  console.log(resp)
   if (resp.status === 200) {
-    return resp.data
+    if (resp.data.result === 100) {
+      return resp.data.data
+    }
   }
   return {
     code: '201',
@@ -22,3 +24,4 @@ ajax.interceptors.response.use(resp => {
 })
 
 export const getHotSearch = () => ajax.get('/search/hot')
+// export const getSongList = () => ajax.get('/songlist/list')
