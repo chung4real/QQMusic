@@ -6,8 +6,6 @@
     <NewSong></NewSong>
     <!-- 精彩推荐 -->
     <Recommand></Recommand>
-    <!-- 新碟首发 -->
-    <NewDisc></NewDisc>
     <!-- 排行榜 -->
     <RankingList></RankingList>
     <!-- MV -->
@@ -19,7 +17,6 @@
 import SongList from './Songlist'
 import NewSong from './NewSong'
 import Recommand from './Recommand'
-import NewDisc from './NewDisc'
 import RankingList from './RankingList'
 import Mv from './Mv'
 
@@ -35,7 +32,6 @@ export default {
     SongList,
     NewSong,
     Recommand,
-    NewDisc,
     RankingList,
     Mv
   }
@@ -44,7 +40,6 @@ export default {
 
 <style lang="less">
 .home {
-  // background-color: rgb(245, 245, 245);
   h2 {
     text-align: center;
     font-size: 30px;
@@ -57,7 +52,7 @@ export default {
       width: 1350px;
       margin: auto;
       .hm-common {
-        height: 530px;
+        height: 550px;
         ul {
           width: 500px;
           height: 50px;
@@ -77,19 +72,11 @@ export default {
           }
         }
       }
-      .hm-songlist {
-        border: 1px solid #000;
-      }
-      .hm-newsong {
-        border: 1px solid #000;
-      }
       .hm-recommand {
         height: 410px;
-        border: 1px solid #000;
       }
       .hm-rankinglist {
         height: 670px;
-        border: 1px solid #000;
       }
     }
   }

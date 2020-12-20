@@ -1,18 +1,26 @@
 <template>
-  <div class="QQMusic">
-    <router-view name="xm-header"></router-view>
-    <router-view to="/home" class="main"></router-view>
-    <router-view name="xm-footer"></router-view>
-  </div>
+  <a-locale-provider :locale="zhCN">
+    <div class="QQMusic">
+      <router-view name="xm-header"></router-view>
+      <router-view to="/home" class="main"></router-view>
+      <router-view name="xm-footer"></router-view>
+    </div>
+  </a-locale-provider>
 </template>
 
 <script>
+import zhCN from 'ant-design-vue/lib/locale-provider/zh_CN'
+import 'moment/locale/zh-cn'
 export default {
-
+  data () {
+    return {
+      zhCN
+    }
+  }
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 html,
 body,
 p,

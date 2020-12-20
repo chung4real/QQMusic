@@ -4,9 +4,9 @@ import Home from '@/views/Home/Home'
 
 // 分包
 const SongList = () => import('@/views/SongList')
-const NewDisc = () => import('@/views/Newdisc')
+const NewDisc = () => import('@/views/Newdisc/Newdisc')
 const RankingList = () => import('@/views/RankingList')
-const Singer = () => import('@/views/Singer')
+const Singer = () => import('@/views/Singer/Singer')
 const Fm = () => import('@/views/Fm')
 const Album = () => import('@/views/Album')
 const MV = () => import('@/views/MV')

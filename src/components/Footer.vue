@@ -81,7 +81,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 .footer {
   width: 100%;
   height: 400px;

@@ -1,7 +1,9 @@
 <template>
   <div class="header">
     <div class="header-top">
-      <img src="../assets/logo.png" alt="QQMusciLogo">
+      <a href="http://localhost:8080/">
+        <img src="../assets/logo.png" alt="QQMusciLogo">
+      </a>
       <span><a href="#">音乐馆</a></span>
       <span><a href="#">我的音乐</a></span>
       <span><a href="#">客户端</a></span>
@@ -12,24 +14,17 @@
         placeholder="搜索音乐、MV、歌单、用户"
         option-filter-prop="children"
         style="width: 230px;margin-left:20px;"
-        :filter-option="filterOption"
-        @focus="handleFocus"
-        @blur="handleBlur"
-        @change="handleChange"
       >
-        <a-select-option value="jack">
-          Jack
-        </a-select-option>
-        <a-select-option value="lucy">
-          Lucy
-        </a-select-option>
-        <a-select-option value="tom">
-          Tom
+        <a-select-option
+          v-for="getSearch in list"
+          :key="getSearch.n"
+        >
+          {{getSearch.k}}
         </a-select-option>
       </a-select>
       <a-avatar size="large" icon="user" />
       <a-dropdown style="margin-left: 20px;">
-      <a-menu slot="overlay" @click="handleMenuClick">
+      <a-menu slot="overlay">
         <a-menu-item key="1">
           续费绿钻豪华版
         </a-menu-item>
@@ -59,30 +54,18 @@
 <script>
 export default {
   name: 'Header',
+  data () {
+    return {
+      list: []
+    }
+  },
   created () {
     this.$http.getHotSearch()
       .then(resp => {
-        console.log(resp)
+        this.list = resp
       })
   },
   methods: {
-    handleChange (value) {
-      console.log(`selected ${value}`)
-    },
-    handleBlur () {
-      console.log('blur')
-    },
-    handleFocus () {
-      console.log('focus')
-    },
-    filterOption (input, option) {
-      return (
-        option.componentOptions.children[0].text.toLowerCase().indexOf(input.toLowerCase()) >= 0
-      )
-    },
-    handleMenuClick (e) {
-      console.log('click', e)
-    }
   }
 }
 </script>
